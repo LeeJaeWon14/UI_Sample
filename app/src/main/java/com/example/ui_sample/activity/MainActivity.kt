@@ -1,12 +1,11 @@
-package com.example.ui_sample
+package com.example.ui_sample.activity
 
-import android.annotation.SuppressLint
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.ui_sample.R
 import com.example.ui_sample.adapter.MyRecyclerAdapter
 import com.example.ui_sample.databinding.ActivityMainBinding
 import com.example.ui_sample.databinding.InitDialogLayoutBinding
