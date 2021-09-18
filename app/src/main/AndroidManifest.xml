@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UI_Sample">
-        <activity android:name=".activity.RippleActivity"></activity>
+        <activity android:name=".activity.CustomActivity" />
+        <activity android:name=".activity.LayoutsActivity" />
+        <activity android:name=".activity.RippleActivity" />
         <activity android:name=".activity.LaunchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
