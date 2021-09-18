@@ -9,11 +9,19 @@
     android:gravity = "center">
 
     <Button
-        android:id = "@+id/btn_customDialog"
+        android:id = "@+id/btn_dialog"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text = "Dialog"
         android:background="@drawable/ripple_mask" />
+
+    <Button
+        android:id = "@+id/btn_customDialog"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text = "custom Dialog"
+        android:background="@drawable/ripple_mask"
+        android:layout_marginTop="50dp"/>
 
     <Button
         android:id = "@+id/btn_customFragment"
