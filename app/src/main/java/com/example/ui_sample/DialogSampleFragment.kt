@@ -12,6 +12,7 @@ import com.example.ui_sample.databinding.FragmentDialogSampleBinding
 
 class DialogSampleFragment : DialogFragment() {
     private lateinit var binding : FragmentDialogSampleBinding
+    private var message = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //isCancelable = false
@@ -33,6 +34,10 @@ class DialogSampleFragment : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Toast.makeText(view.context, "DialogFragment", Toast.LENGTH_SHORT).show()
+        Toast.makeText(view.context, message, Toast.LENGTH_SHORT).show()
+    }
+
+    fun setText(message : String) {
+        this.message = message
     }
 }
