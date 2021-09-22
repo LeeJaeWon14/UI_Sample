@@ -22,4 +22,8 @@
         <!-- StatusBar Color -->
         <item name="android:statusBarColor">@color/black</item>
     </style>
+
+    <style name="splashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@mipmap/ic_launcher</item>
+    </style>
 </resources>
