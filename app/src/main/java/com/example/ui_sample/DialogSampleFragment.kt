@@ -1,8 +1,8 @@
 package com.example.ui_sample
 
+import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,14 +12,9 @@ import com.example.ui_sample.databinding.FragmentDialogSampleBinding
 
 class DialogSampleFragment : DialogFragment() {
     private lateinit var binding : FragmentDialogSampleBinding
-    private var message = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //isCancelable = false
-    }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
     }
 
     override fun onCreateView(
@@ -34,10 +29,10 @@ class DialogSampleFragment : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Toast.makeText(view.context, message, Toast.LENGTH_SHORT).show()
-    }
-
-    fun setText(message : String) {
-        this.message = message
+        Toast.makeText(view.context, "Text", Toast.LENGTH_SHORT).show()
+        binding.tvDialog.text = "it's Dialog Fragment Sample"
+        binding.btnDialogClose.setOnClickListener {
+            dismiss()
+        }
     }
 }
