@@ -11,5 +11,11 @@
         android:id = "@+id/second"
         android:icon="@mipmap/ic_launcher"
         android:title = "second"
-        app:showAsAction="always" />
+        app:showAsAction="never" />
+
+    <item
+        android:id = "@+id/third"
+        android:icon="@mipmap/ic_launcher"
+        android:title = "third"
+        app:showAsAction="withText" />
 </menu>
