@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UI_Sample">
-        <activity android:name=".activity.SplashActivity"
-            android:theme="@style/SplashTheme"
-            android:screenOrientation="portrait">
+        <activity android:name=".activity.SelectorActivity"></activity>
+        <activity
+            android:name=".activity.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,9 +24,7 @@
         <activity android:name=".activity.CustomActivity" />
         <activity android:name=".activity.LayoutsActivity" />
         <activity android:name=".activity.RippleActivity" />
-        <activity android:name=".activity.LaunchActivity">
-
-        </activity>
+        <activity android:name=".activity.LaunchActivity"></activity>
         <activity android:name=".activity.MainActivity" />
     </application>
 

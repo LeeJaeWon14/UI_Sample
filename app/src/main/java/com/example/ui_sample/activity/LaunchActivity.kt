@@ -22,7 +22,7 @@ class LaunchActivity : AppCompatActivity() {
 
     private fun showDialog() {
         val dlg = AlertDialog.Builder(this)
-        val items = arrayOf("Refresh Layout", "Ripple", "Layouts", "Dialog", "Collapse")
+        val items = arrayOf("Refresh Layout", "Ripple", "Layouts", "Dialog", "Menu", "Selector")
         dlg.setItems(items, DialogInterface.OnClickListener {dialog, which ->
             when(which) {
                 0 -> { startActivity(Intent(this, MainActivity::class.java)) }
@@ -30,6 +30,7 @@ class LaunchActivity : AppCompatActivity() {
                 2 -> { startActivity(Intent(this, RippleActivity::class.java)) }
                 3 -> { startActivity(Intent(this, CustomActivity::class.java)) }
                 4 -> { startActivity(Intent(this, MenuActivity::class.java)) }
+                5 -> { startActivity(Intent(this, SelectorActivity::class.java)) }
             }
         })
         dlg.setNegativeButton("취소", null)
