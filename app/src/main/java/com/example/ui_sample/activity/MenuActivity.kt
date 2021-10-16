@@ -31,11 +31,11 @@ class MenuActivity : AppCompatActivity() {
         registerForContextMenu(binding.btnMenu)
         binding.btnMenu.setOnClickListener {
             val popup = PopupMenu(this, it)
-            menuInflater.inflate(R.menu.context_menu, popup.menu)
+            menuInflater.inflate(R.menu.sample_menu, popup.menu)
             popup.setOnMenuItemClickListener {
                 when(it.itemId) {
-                    R.id.context_first -> Toast.makeText(this, "first", Toast.LENGTH_SHORT).show()
-                    R.id.context_second -> Toast.makeText(this, "second", Toast.LENGTH_SHORT).show()
+                    R.id.sample_one -> Toast.makeText(this, "one", Toast.LENGTH_SHORT).show()
+                    R.id.sample_two -> Toast.makeText(this, "two", Toast.LENGTH_SHORT).show()
                 }
                 return@setOnMenuItemClickListener true
             }
@@ -78,16 +78,16 @@ class MenuActivity : AppCompatActivity() {
         v: View?,
         menuInfo: ContextMenu.ContextMenuInfo?
     ) {
-        menuInflater.inflate(R.menu.context_menu, menu)
+        menuInflater.inflate(R.menu.sample_menu, menu)
     }
 
     override fun onContextItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
-            R.id.context_first -> {
-                Toast.makeText(this, "first", Toast.LENGTH_SHORT).show()
+            R.id.sample_one -> {
+                Toast.makeText(this, "one", Toast.LENGTH_SHORT).show()
             }
-            R.id.context_second -> {
-                Toast.makeText(this, "second", Toast.LENGTH_SHORT).show()
+            R.id.sample_two -> {
+                Toast.makeText(this, "two", Toast.LENGTH_SHORT).show()
             }
         }
 

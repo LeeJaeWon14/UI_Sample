@@ -14,6 +14,9 @@
     <!-- text selector color -->
     <color name="white_50">#80FFFFFF</color>
 
+    <!-- test selector color (black) -->
+    <color name="black_30">#4D000000</color>
+
 <!--    투명도
         100% FF
         95%  F2

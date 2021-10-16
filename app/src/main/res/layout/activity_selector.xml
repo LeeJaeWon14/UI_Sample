@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/ripple_mask"
+        android:textColor="@color/text_selector_black"
         android:layout_centerInParent="true"
         android:text = "ripple" />
 
@@ -22,6 +23,6 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
         android:background="@drawable/selector_button_sample"
-        android:textColor="@drawable/text_selector"
+        android:textColor="@color/text_selector"
         android:text = "selector"/>
 </RelativeLayout>
