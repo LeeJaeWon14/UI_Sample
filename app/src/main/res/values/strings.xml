@@ -2,4 +2,9 @@
     <string name="app_name">UI_Sample</string>
     <string name="str_edit_count">갯수</string>
     <string name="str_button_input">입력</string>
+
+    <!-- Fragment title -->
+    <string name="str_first_fragment">Fragment1</string>
+    <string name="str_second_fragment">Fragment2</string>
+    <string name="str_third_fragment">Fragment3</string>
 </resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/launch_1"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:tooltipText="Launch1"
+        android:title="Launch1"
+        app:showAsAction="always"/>
+    <item android:id="@+id/launch_2"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:tooltipText="Launch2"
+        android:title="Launch2"
+        app:showAsAction="always"/>
+    <item android:id="@+id/launch_3"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:tooltipText="Launch3"
+        android:title="Launch3"
+        app:showAsAction="always"/>
+    <group android:id="@+id/launch_group"
+        android:icon="@drawable/ic_launcher_foreground">
+        <item android:id="@+id/launch_4"
+            android:tooltipText="Launch4"
+            android:title="Launch4" />
+        <item android:id="@+id/launch_5"
+            android:tooltipText="Launch5"
+            android:title="Launch5" />
+    </group>
+</menu>
