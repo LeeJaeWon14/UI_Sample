@@ -7,6 +7,8 @@
     tools:context=".activity.SwipeTabActivity"
     android:orientation="vertical">
 
+    <!-- app:tabGravity - item(tab)의 배치 -->
+    <!-- app:tabMode - item(tab)들의 스크롤 처리 -->
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"

@@ -45,5 +45,7 @@ class SwipeTabActivity : AppCompatActivity() {
 //                binding.tabLayout.getTabAt(position)?.text = tabTitle[position]
             }
         })
+
+        binding.tabLayout.setSelectedTabIndicatorColor(getColor(R.color.purple_700))
     }
 }
