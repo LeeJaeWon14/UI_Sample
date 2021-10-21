@@ -30,6 +30,10 @@ class LaunchActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         showDialog()
         binding.btnSelect.setOnClickListener { showDialog() }
+        binding.btnSelect.setOnLongClickListener {
+            startActivity(Intent(this, ColorActivity::class.java))
+            true
+        }
     }
 
     private fun showDialog() {
