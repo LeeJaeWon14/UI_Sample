@@ -31,7 +31,7 @@ class LaunchActivity : AppCompatActivity() {
         showDialog()
         binding.btnSelect.setOnClickListener { showDialog() }
         binding.btnSelect.setOnLongClickListener {
-            startActivity(Intent(this, ColorActivity::class.java))
+            startActivity(Intent(this, ViewPagerSampleActivity::class.java))
             true
         }
     }
