@@ -6,6 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.MotionEvent
 import android.view.View
+import android.view.WindowManager
 import android.widget.Toast
 import com.example.ui_sample.R
 import com.example.ui_sample.databinding.ActivityDoubleTabBinding
@@ -19,21 +20,15 @@ class DoubleTabActivity : AppCompatActivity() {
         binding = ActivityDoubleTabBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.viewGradient.setOnClickListener(object : OnTabListener() {
-            override fun onSingleTab(v: View?) {
-                TODO("Not yet implemented")
-            }
+        window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
 
+        binding.viewGradient.setOnClickListener(object : OnTabListener() {
             override fun onDoubleTab(v: View?) {
                 Toast.makeText(v?.context, "Double Tab", Toast.LENGTH_SHORT).show()
             }
         })
 
         binding.btnTab.setOnClickListener(object : OnTabListener() {
-            override fun onSingleTab(v: View?) {
-//                Toast.makeText(v?.context, "Single Tab", Toast.LENGTH_SHORT).show()
-            }
-
             override fun onDoubleTab(v: View?) {
                 Toast.makeText(v?.context, "Double Tab", Toast.LENGTH_SHORT).show()
             }

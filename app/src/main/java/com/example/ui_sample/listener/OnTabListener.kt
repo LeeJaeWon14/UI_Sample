@@ -12,12 +12,12 @@ abstract class OnTabListener : View.OnClickListener {
     // 마지막 탭 시간
     private var lastTabTime: Long = 0
     private val tabHandler = Handler(Looper.getMainLooper())
-    abstract fun onSingleTab(v: View?)
+//    abstract fun onSingleTab(v: View?)
     abstract fun onDoubleTab(v: View?)
     override fun onClick(v: View?) {
-        val singleTabRunnable = Runnable {
-            onSingleTab(v)
-        }
+//        val singleTabRunnable = Runnable {
+//            onSingleTab(v)
+//        }
 
         // 탭한 시간
         val currentTabTime = SystemClock.uptimeMillis()
