@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UI_Sample">
-        <activity android:name=".activity.ProgressbarActivity"></activity>
+        <activity android:name=".SpannableActivity"></activity>
+        <activity android:name=".activity.ProgressbarActivity" />
         <activity android:name=".activity.DoubleTabActivity" />
         <activity android:name=".activity.KeyboardActivity" />
         <activity android:name=".activity.ViewPagerSampleActivity" />
