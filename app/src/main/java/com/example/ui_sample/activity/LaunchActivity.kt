@@ -9,11 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.ui_sample.R
-import com.example.ui_sample.SpannableActivity
 import com.example.ui_sample.databinding.ActivityLaunchBinding
 
 class LaunchActivity : AppCompatActivity() {
@@ -39,7 +37,7 @@ class LaunchActivity : AppCompatActivity() {
 
     private fun showDialog() {
         val dlg = AlertDialog.Builder(this)
-        val items = arrayOf("Refresh Layout", "Ripple", "Layouts", "Dialog", "Menu", "Selector", "SwipeTab", "Tab", "Progress Bar", "Spannable & Linkfy")
+        val items = arrayOf("Refresh Layout", "Ripple", "Layouts", "Dialog", "Menu", "Selector", "SwipeTab", "Tab", "Progress Bar", "Spannable & Linkfy", "SeekBar")
         dlg.setItems(items, DialogInterface.OnClickListener {dialog, which ->
             when(which) {
                 0 -> { startActivity(Intent(this, MainActivity::class.java)) }
@@ -52,6 +50,7 @@ class LaunchActivity : AppCompatActivity() {
                 7 -> { startActivity(Intent(this, DoubleTabActivity::class.java)) }
                 8 -> { startActivity(Intent(this, ProgressbarActivity::class.java)) }
                 9 -> { startActivity(Intent(this, SpannableActivity::class.java)) }
+                10 -> { startActivity(Intent(this, SeekbarActivity::class.java)) }
             }
         })
         dlg.setNegativeButton("취소", null)

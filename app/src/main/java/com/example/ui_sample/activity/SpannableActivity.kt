@@ -1,4 +1,4 @@
-package com.example.ui_sample
+package com.example.ui_sample.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -21,7 +21,7 @@ class SpannableActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.apply {
-//            val span =
+            // Spannable
             tvSpannable.text.toSpannable().setSpan(object : ClickableSpan() {
                 override fun onClick(p0: View) {
                     Toast.makeText(this@SpannableActivity, "Spannable Click", Toast.LENGTH_SHORT).show()
@@ -29,18 +29,15 @@ class SpannableActivity : AppCompatActivity() {
             }, 0, 9, Spanned.SPAN_EXCLUSIVE_INCLUSIVE)
             tvSpannable.movementMethod = LinkMovementMethod.getInstance()
 
-            val mTransform = Linkify.TransformFilter() { _, _ ->
-                return@TransformFilter ""
-            }
+            // Linkify
+            val mTransform = Linkify.TransformFilter { match, url -> "" }
             val pattern1 = Pattern.compile("Linkify")
-            val pattern2 = Pattern.compile("TextView")
 
-            Linkify.addLinks(tvLinkfy, pattern1, "velog.io/@jeep_chief_14", null, mTransform)
-            Linkify.addLinks(tvLinkfy, pattern2, "github.com/LeeJaeWon14", null, mTransform)
+            Linkify.addLinks(tvLinkfy, pattern1, "https://velog.io/@jeep_chief_14", null, mTransform)
 
-            btnAutoLinkGo.setOnClickListener {
-                tvAutoLink.text = edtInputAutoLink.text.toString()
-            }
+//            btnAutoLinkGo.setOnClickListener {
+//                tvAutoLink.text = edtInputAutoLink.text.toString()
+//            }
         }
     }
 }

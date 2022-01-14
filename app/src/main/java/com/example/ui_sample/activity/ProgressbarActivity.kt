@@ -24,10 +24,7 @@ class ProgressbarActivity : AppCompatActivity() {
 //                    pbProgress.isVisible = false
 //                }, 1500)
 
-                when (pbProgress.isVisible) {
-                    true -> pbProgress.isVisible = false
-                    false -> pbProgress.isVisible = true
-                }
+                pbProgress.run { isVisible = !isVisible }
             }
         }
     }
