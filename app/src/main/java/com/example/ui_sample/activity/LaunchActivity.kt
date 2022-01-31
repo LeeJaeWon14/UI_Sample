@@ -37,7 +37,7 @@ class LaunchActivity : AppCompatActivity() {
 
     private fun showDialog() {
         val dlg = AlertDialog.Builder(this)
-        val items = arrayOf("Refresh Layout", "Ripple", "Layouts", "Dialog", "Menu", "Selector", "SwipeTab", "Tab", "Progress Bar", "Spannable & Linkfy", "SeekBar")
+        val items = arrayOf("Refresh Layout", "Ripple", "Layouts", "Dialog", "Menu", "Selector", "SwipeTab", "Tab", "Progress Bar", "Spannable & Linkfy", "SeekBar", "Coordinator")
         dlg.setItems(items, DialogInterface.OnClickListener {dialog, which ->
             when(which) {
                 0 -> { startActivity(Intent(this, MainActivity::class.java)) }
@@ -51,6 +51,7 @@ class LaunchActivity : AppCompatActivity() {
                 8 -> { startActivity(Intent(this, ProgressbarActivity::class.java)) }
                 9 -> { startActivity(Intent(this, SpannableActivity::class.java)) }
                 10 -> { startActivity(Intent(this, SeekbarActivity::class.java)) }
+                11 -> { startActivity(Intent(this, CoordinatorActivity::class.java)) }
             }
         })
         dlg.setNegativeButton("취소", null)
