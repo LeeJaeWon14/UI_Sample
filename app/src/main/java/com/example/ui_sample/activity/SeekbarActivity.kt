@@ -1,9 +1,15 @@
 package com.example.ui_sample.activity
 
+import android.content.ClipData
+import android.content.ClipDescription.MIMETYPE_TEXT_PLAIN
+import android.content.ClipboardManager
 import android.media.AudioManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.SeekBar
+import android.widget.TextView
+import android.widget.Toast
+import com.example.ui_sample.R
 import com.example.ui_sample.databinding.ActivitySeekbarBinding
 
 class SeekbarActivity : AppCompatActivity() {
@@ -16,6 +22,7 @@ class SeekbarActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val audioManager = getSystemService(AUDIO_SERVICE) as AudioManager
+        val clipManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
         binding.apply {
             volumeMax = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
             volume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)
@@ -45,6 +52,28 @@ class SeekbarActivity : AppCompatActivity() {
                     }
                 })
             }
+
+            checkPaste(clipManager)
+            tvClipboard.text = getString(R.string.app_name)
+            tvClipboard.setOnClickListener {
+                val clip = ClipData.newPlainText("simple text", (it as TextView).text)
+                clipManager.setPrimaryClip(clip)
+                Toast.makeText(this@SeekbarActivity, "클립보드에 복사되었습니다.", Toast.LENGTH_SHORT).show()
+                checkPaste(clipManager)
+            }
+
+            btnClipboard.setOnClickListener {
+                tvClipboard.text = clipManager.primaryClip?.getItemAt(0)?.text
+                Toast.makeText(this@SeekbarActivity, "${clipManager.primaryClip?.getItemAt(0)?.text}", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun checkPaste(clipManager: ClipboardManager) {
+        binding.btnClipboard.isEnabled = when {
+            !clipManager.hasPrimaryClip() -> false
+            !(clipManager.primaryClipDescription?.hasMimeType(MIMETYPE_TEXT_PLAIN))!! -> false
+            else -> true
         }
     }
 }
