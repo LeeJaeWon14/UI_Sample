@@ -41,6 +41,9 @@ class SeekbarActivity : AppCompatActivity() {
                             progress,
                             0
                         )
+
+                        // progress is display to percentage
+                        tvVolume.text = (progress * 6.7).toInt().toString().plus("%")
                     }
 
                     override fun onStartTrackingTouch(seekBar: SeekBar?) {

@@ -16,7 +16,8 @@ fun main() {
 //    println(c)
 
 //    ConstClass("Hi", 2, 50)
-//    ConstClass("Hi", 2, 50, 50.05).test(testPrint)
+    ConstClass("Hi", 2, 50, 50.05).test(testPrint)
+    println(testPrint.invoke("22"))
 
     val x = 18
     var test: Int = run {
@@ -41,7 +42,7 @@ class ConstClass {
     constructor(name: String, val_1: Int, val_2: Int) {
         println("$name / $val_1 / $val_2")
         test {
-
+            true
         }
     }
 
@@ -49,11 +50,23 @@ class ConstClass {
         println("$name / $val_1 / $val_2 / $val_3")
     }
 
-    fun test(func : (message: Any?) -> Unit) {
+    fun test(func : (message: Any?) -> Boolean) {
         func.invoke("1")
     }
 }
 
-val testPrint : (message: Any?) -> Unit = {
+val testPrint : (message: Any?) -> Boolean = {
     println(it)
+    true
+}
+
+var egg = 1
+var milk = 1
+fun func() {
+    if(egg > 0) {
+        milk = 6
+    }
+    else {
+        milk = 1
+    }
 }
