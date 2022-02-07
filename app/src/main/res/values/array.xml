@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="activity_list">
+        <item>Refresh Layout</item>
+        <item>Ripple</item>
+        <item>Layouts</item>
+        <item>Dialog</item>
+        <item>Menu</item>
+        <item>Selector</item>
+        <item>SwipeTab</item>
+        <item>Tab</item>
+        <item>Progress Bar</item>
+        <item>Spannable &amp; Linkfy</item>
+        <item>SeekBar</item>
+        <item>Coordinator</item>
+        <item>Scroll Test</item>
+        <item>Compose</item>
+    </string-array>
+</resources>

@@ -12,6 +12,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.compose.ui.res.stringArrayResource
 import com.example.ui_sample.R
 import com.example.ui_sample.ScrollingActivity
 import com.example.ui_sample.databinding.ActivityLaunchBinding
@@ -41,7 +42,8 @@ class LaunchActivity : AppCompatActivity() {
 
     private fun showDialog() {
         val dlg = AlertDialog.Builder(this)
-        val items = arrayOf("Refresh Layout", "Ripple", "Layouts", "Dialog", "Menu", "Selector", "SwipeTab", "Tab", "Progress Bar", "Spannable & Linkfy", "SeekBar", "Coordinator", "Scroll Test")
+        val items = resources.getStringArray(R.array.activity_list)
+            //arrayOf("", "Ripple", "Layouts", "Dialog", "Menu", "Selector", "SwipeTab", "Tab", "Progress Bar", "Spannable & Linkfy", "SeekBar", "Coordinator", "Scroll Test")
         dlg.setItems(items, DialogInterface.OnClickListener {dialog, which ->
             when(which) {
                 0 -> { startActivity(Intent(this, MainActivity::class.java)) }
@@ -57,6 +59,7 @@ class LaunchActivity : AppCompatActivity() {
                 10 -> { startActivity(Intent(this, SeekbarActivity::class.java)) }
                 11 -> { startActivity(Intent(this, CoordinatorActivity::class.java)) }
                 12 -> { startActivity(Intent(this, ScrollingActivity::class.java)) }
+                13 -> { startActivity(Intent(this, ComposeActivity::class.java)) }
             }
         })
         dlg.setNegativeButton("취소", null)
