@@ -15,9 +15,9 @@
     </style>
 
     <style name="dialog_fullscreen" parent="Theme.AppCompat.Dialog">
-        <item name = "android:windowIsFloating">false</item>
-        <item name = "android:windowFullscreen">false</item>
-        <item name = "android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
 
         <!-- StatusBar Color -->
         <item name="android:statusBarColor">@color/black</item>
@@ -26,4 +26,13 @@
     <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@raw/test</item>
     </style>
+
+    <style name="Theme.UI_Sample.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.UI_Sample.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.UI_Sample.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

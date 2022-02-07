@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ui_sample">
 
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UI_Sample">
-        <activity android:name=".activity.CoordinatorActivity"></activity>
+        <activity
+            android:name=".ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/Theme.UI_Sample.NoActionBar"></activity>
+        <activity android:name=".activity.CoordinatorActivity" />
         <activity android:name=".activity.SeekbarActivity" />
         <activity android:name=".activity.SpannableActivity" />
         <activity android:name=".activity.ProgressbarActivity" />

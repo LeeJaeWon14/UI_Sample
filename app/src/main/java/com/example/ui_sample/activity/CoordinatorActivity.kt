@@ -19,6 +19,9 @@ class CoordinatorActivity : AppCompatActivity() {
         binding = ActivityCoordinatorBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        actionBar?.hide()
+        setSupportActionBar(binding.tbCoordinator)
+
         val dlg = AlertDialog.Builder(this).create()
         val view = View.inflate(this, R.layout.dialog_coordinator, null)
         val dlgBinding = DialogCoordinatorBinding.inflate(layoutInflater)
