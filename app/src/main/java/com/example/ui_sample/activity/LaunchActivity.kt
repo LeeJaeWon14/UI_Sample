@@ -1,20 +1,20 @@
 package com.example.ui_sample.activity
 
-import com.example.ui_sample.activity.*
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PowerManager
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.compose.ui.res.stringArrayResource
+import androidx.appcompat.app.AppCompatActivity
 import com.example.ui_sample.R
 import com.example.ui_sample.ScrollingActivity
+import com.example.ui_sample.activity.*
 import com.example.ui_sample.databinding.ActivityLaunchBinding
 
 class LaunchActivity : AppCompatActivity() {
@@ -30,8 +30,19 @@ class LaunchActivity : AppCompatActivity() {
         binding.toolbar.setTitleTextColor(Color.WHITE)
         binding.toolbar.setBackgroundColor(getColor(R.color.purple_700))
         setSupportActionBar(binding.toolbar)
+
+        val powerManager = getSystemService(POWER_SERVICE) as PowerManager
         showDialog()
-        binding.btnSelect.setOnClickListener { showDialog() }
+        binding.btnSelect.setOnClickListener {
+            if(powerManager.isInteractive) {
+                Log.e("POWER MANAGER", "Screen on")
+                showDialog()
+            }
+            else {
+                Log.e("POWER MANAGER", "Screen off")
+                Toast.makeText(this, "화면이 꺼져있음", Toast.LENGTH_SHORT).show()
+            }
+        }
         binding.btnSelect.setOnLongClickListener {
             startActivity(Intent(this, ViewPagerSampleActivity::class.java))
             true
@@ -43,7 +54,6 @@ class LaunchActivity : AppCompatActivity() {
     private fun showDialog() {
         val dlg = AlertDialog.Builder(this)
         val items = resources.getStringArray(R.array.activity_list)
-            //arrayOf("", "Ripple", "Layouts", "Dialog", "Menu", "Selector", "SwipeTab", "Tab", "Progress Bar", "Spannable & Linkfy", "SeekBar", "Coordinator", "Scroll Test")
         dlg.setItems(items, DialogInterface.OnClickListener {dialog, which ->
             when(which) {
                 0 -> { startActivity(Intent(this, MainActivity::class.java)) }
@@ -59,7 +69,6 @@ class LaunchActivity : AppCompatActivity() {
                 10 -> { startActivity(Intent(this, SeekbarActivity::class.java)) }
                 11 -> { startActivity(Intent(this, CoordinatorActivity::class.java)) }
                 12 -> { startActivity(Intent(this, ScrollingActivity::class.java)) }
-                13 -> { startActivity(Intent(this, ComposeActivity::class.java)) }
             }
         })
         dlg.setNegativeButton("취소", null)

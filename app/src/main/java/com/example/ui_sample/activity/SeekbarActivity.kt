@@ -1,14 +1,15 @@
 package com.example.ui_sample.activity
 
-import android.content.ClipData
+import android.content.*
 import android.content.ClipDescription.MIMETYPE_TEXT_PLAIN
-import android.content.ClipboardManager
 import android.media.AudioManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.KeyEvent
 import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.ui_sample.R
 import com.example.ui_sample.databinding.ActivitySeekbarBinding
 
@@ -16,12 +17,17 @@ class SeekbarActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySeekbarBinding
     private var volume: Int = 0
     private var volumeMax = 0
+    private lateinit var audioManager: AudioManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySeekbarBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val audioManager = getSystemService(AUDIO_SERVICE) as AudioManager
+//        registerReceiver(castReceiver, IntentFilter().apply {
+//            addAction(Intent.ACTION_MEDIA_BUTTON)
+//        })
+        audioManager = getSystemService(AUDIO_SERVICE) as AudioManager
         val clipManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
         binding.apply {
             volumeMax = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC)
@@ -78,5 +84,44 @@ class SeekbarActivity : AppCompatActivity() {
             !(clipManager.primaryClipDescription?.hasMimeType(MIMETYPE_TEXT_PLAIN))!! -> false
             else -> true
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+//        unregisterReceiver(castReceiver)
+    }
+
+//    private val castReceiver = object : BroadcastReceiver() {
+//        override fun onReceive(context: Context?, intent: Intent?) {
+//            when(intent?.action) {
+//                Intent.ACTION_MEDIA_BUTTON -> {
+//                    Log.e("VOLUME", "cliced media button")
+//                    binding.apply {
+//                        sbVolume.progress = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)
+//                        tvVolume.text = (sbVolume.progress * 6.7).toInt().toString().plus("%")
+//                    }
+//                }
+//            }
+//        }
+//    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        super.onKeyDown(keyCode, event)
+        when(keyCode) {
+            KeyEvent.KEYCODE_VOLUME_UP -> {
+                Log.e("MEDIA", "clicked media button")
+                binding.apply {
+                    sbVolume.progress = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)
+                    tvVolume.text = (sbVolume.progress * 6.7).toInt().toString().plus("%")
+                }
+            }
+            KeyEvent.KEYCODE_VOLUME_DOWN -> {
+                Log.e("MEDIA", "${audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)}")
+            }
+            KeyEvent.KEYCODE_BACK -> {
+                onBackPressed()
+            }
+        }
+        return false
     }
 }
