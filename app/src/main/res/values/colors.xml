@@ -8,6 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <!-- WebView colors -->
+    <color name="light_gray">#B5B5B5</color>
+
     <!-- button selector color -->
     <color name="purple_500_70">#B36200EE</color>
 

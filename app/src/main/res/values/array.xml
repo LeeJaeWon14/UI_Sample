@@ -14,5 +14,6 @@
         <item>SeekBar</item>
         <item>Coordinator</item>
         <item>Scroll Test</item>
+        <item>WebView (Custom)</item>
     </string-array>
 </resources>

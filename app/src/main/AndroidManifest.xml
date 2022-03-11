@@ -3,6 +3,7 @@
     package="com.example.ui_sample">
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,8 +11,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.UI_Sample">
-        <activity android:name=".activity.ComposeActivity"></activity>
+        android:theme="@style/Theme.UI_Sample"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".activity.WebViewActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".ScrollingActivity"
             android:label="@string/title_activity_scrolling"
