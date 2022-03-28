@@ -69,7 +69,6 @@ class LaunchActivity : AppCompatActivity() {
                 10 -> { startActivity(Intent(this, SeekbarActivity::class.java)) }
                 11 -> { startActivity(Intent(this, CoordinatorActivity::class.java)) }
                 12 -> { startActivity(Intent(this, ScrollingActivity::class.java)) }
-                13 -> { startActivity(Intent(this, WebViewActivity::class.java)) }
             }
         })
         dlg.setNegativeButton("취소", null)
