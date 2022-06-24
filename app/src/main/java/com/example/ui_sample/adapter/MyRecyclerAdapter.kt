@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ui_sample.R
+import com.example.ui_sample.activity.RecyclerviewActivity
 import com.example.ui_sample.databinding.RecyclerItemBinding
 import java.util.*
 
@@ -29,6 +30,10 @@ class MyRecyclerAdapter(private val count : Int) : RecyclerView.Adapter<MyRecycl
             0 -> { holder.image.setImageResource(R.color.purple_200) }
             1 -> { holder.image.setImageResource(R.color.purple_500) }
             2 -> { holder.image.setImageResource(R.color.purple_700) }
+        }
+
+        holder.image.setOnClickListener {
+            (holder.itemView.context as RecyclerviewActivity).showInitDialog()
         }
     }
 }

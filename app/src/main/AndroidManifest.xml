@@ -13,7 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UI_Sample"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.CustomKeypadActivity"></activity>
+        <activity
+            android:name=".activity.RecyclerviewActivity"
+            android:exported="false" />
+        <activity android:name=".activity.CustomKeypadActivity" />
         <activity
             android:name=".ScrollingActivity"
             android:label="@string/title_activity_scrolling"

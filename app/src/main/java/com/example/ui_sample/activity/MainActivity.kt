@@ -11,15 +11,13 @@ import com.example.ui_sample.databinding.ActivityMainBinding
 import com.example.ui_sample.databinding.InitDialogLayoutBinding
 
 class MainActivity : AppCompatActivity() {
-    private var _binding : ActivityMainBinding? = null
-    private val binding
-        get() = _binding!!
+    private lateinit var binding : ActivityMainBinding
     private var count : Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        _binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.refresh.setProgressBackgroundColorSchemeColor(getColor(R.color.purple_500))
